@@ -17,13 +17,11 @@
 
 -->
 <!--
-    Description: Solo web deployment descriptor.
-    Version: 1.0.5.1, Sep 27, 2013
-    Author: Liang Ding
+    Author: liumapp
 -->
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <listener>
-        <listener-class>com.liumapp.jspbasic.App</listener-class>
+        <listener-class>com.liumapp.jspbasic.listener.FirstListener</listener-class>
     </listener>
 
 </web-app>
