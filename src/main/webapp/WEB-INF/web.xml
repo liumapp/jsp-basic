@@ -29,9 +29,16 @@
     <listener>
         <listener-class>com.liumapp.jspbasic.listener.SecondListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>com.liumapp.jspbasic.listener.FirstHttpSessionListener</listener-class>
+    </listener>
 
     <context-param>
         <param-name>Author</param-name>
         <param-value>liumapp</param-value>
     </context-param>
+
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
 </web-app>
