@@ -14,6 +14,10 @@ public class FirstHttpSessionListener implements HttpSessionListener {
         System.out.println("sessionCreated");
     }
 
+    /**
+     * 配置文件中设置了session的超时时间为1分钟，但实际所需要的时间是1分半才会执行sessionDestroy.
+     * @param httpSessionEvent
+     */
     public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
         System.out.println("sessionDestroyed");
     }
