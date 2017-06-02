@@ -35,6 +35,16 @@
     <listener>
         <listener-class>com.liumapp.jspbasic.listener.FirstServletRequestListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>com.liumapp.jspbasic.listener.FirstServletContextAttributeListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.liumapp.jspbasic.listener.FirstHttpSessionAttributeListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.liumapp.jspbasic.listener.FirstServletRequestAttributeListener</listener-class>
+    </listener>
+
 
     <context-param>
         <param-name>Author</param-name>
