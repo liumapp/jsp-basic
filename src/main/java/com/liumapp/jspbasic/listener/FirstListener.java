@@ -12,7 +12,9 @@ import javax.servlet.ServletContextListener;
 public class FirstListener  implements ServletContextListener{
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        System.out.println("first listener initialized");
+        String author = servletContextEvent.getServletContext().getInitParameter("Author");
+        servletContextEvent.getServletContext().setAttribute("homePage" , "http://www.liumapp.com");
+        System.out.println("first listener initialized created by " + author + " and homepage is : " + servletContextEvent.getServletContext().getAttribute("homePage"));
     }
 
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
