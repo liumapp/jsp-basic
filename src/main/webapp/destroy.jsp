@@ -11,6 +11,9 @@
     request.removeAttribute("requestName");
     request.getSession().removeAttribute("sessionName");
     request.getServletContext().removeAttribute("contextName");
+
+    //session unbind
+    request.getSession().removeAttribute("currentUser");
 %>
 <html>
 <head>

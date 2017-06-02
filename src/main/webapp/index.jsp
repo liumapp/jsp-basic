@@ -12,6 +12,8 @@
     <title></title>
 </head>
 <body>
+<%= request.getSession().getAttribute("currentUser")%>
+
 hello world
 
 <button onclick="location.href='<%= request.getContextPath()%>/init.jsp'">init</button>

@@ -11,6 +11,9 @@
     request.setAttribute("requestName" , "requestValue");
     request.getSession().setAttribute("sessionName" , "sessionValue");
     request.getServletContext().setAttribute("contextName" , "contextValue");
+
+    //session bind
+    request.getSession().setAttribute("currentUser" , new com.liumapp.jspbasic.entity.User());
 %>
 <html>
 <head>
