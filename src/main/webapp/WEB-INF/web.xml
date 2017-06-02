@@ -23,5 +23,12 @@
     <listener>
         <listener-class>com.liumapp.jspbasic.listener.FirstListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>com.liumapp.jspbasic.listener.ThirdListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.liumapp.jspbasic.listener.SecondListener</listener-class>
+    </listener>
+
 
 </web-app>
