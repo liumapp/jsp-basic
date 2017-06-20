@@ -4,22 +4,22 @@ import javax.servlet.*;
 import java.io.IOException;
 
 /**
- * Created by liumapp on 6/6/17.
+ * Created by liumapp on 6/7/17.
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-public class FirstFilter implements Filter {
+public class SecondFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println("Start FirstFilter");
+        System.out.println("Start SecondFilter");
     }
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("do FirstFilter");
+        System.out.println("do SecondFilter");
         filterChain.doFilter(servletRequest , servletResponse);
-        System.out.println("FirstFilter end");
+        System.out.println("SecondFilter end");
     }
 
     public void destroy() {
-        System.out.println("destroy FirstFilter");
+        System.out.println("destroy SecondFilter");
     }
 }
