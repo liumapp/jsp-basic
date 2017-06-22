@@ -32,6 +32,8 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
+        System.out.println(username + " 来访");
+
         if ("admin" . equals(username) && "admin" . equals(password)) {
 
             //验证通过

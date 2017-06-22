@@ -25,6 +25,13 @@ public class LoginFilter implements Filter {
 
         HttpSession session = request.getSession();
 
+        //编码转换
+        String charset = config.getInitParameter("charset");
+        if (charset == null) {
+            charset = "UTF-8";
+        }
+        request.setCharacterEncoding(config.getInitParameter(charset));
+
         String noCheckPaths = this.config.getInitParameter("noCheckPath");
 
         if (noCheckPaths != null) {
@@ -32,7 +39,7 @@ public class LoginFilter implements Filter {
             for (int i = 0 ; i < strArray.length ; i++) {
 
                 if (strArray[i] == null || "".equals(strArray[i])) continue;
-                
+
                 if (request.getRequestURI().indexOf(strArray[i]) != -1) {
                     filterChain.doFilter(servletRequest , servletResponse);
                     return;

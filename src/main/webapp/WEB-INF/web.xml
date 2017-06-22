@@ -68,6 +68,10 @@
             <param-name>noCheckPath</param-name>
             <param-value>login.jsp;index.jsp;LoginServlet</param-value>
         </init-param>
+        <init-param>
+            <param-name>charset</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
     </filter>
 
     <!--<filter-mapping>-->

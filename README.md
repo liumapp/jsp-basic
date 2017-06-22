@@ -14,6 +14,7 @@ you'll see the result from your browser with thr url of http://localhost:8080/js
             --jspbasic
                 --entity 实体类
                 --filter 过滤器
+                    --LoginFilter 控制登录的过滤器，同时涉及到LoginServlet
                 --listener 监听器
 
 # 代码解析
