@@ -18,6 +18,15 @@ you'll see the result from your browser with thr url of http://localhost:8080/js
                 --listener 监听器
                 --io
                     --Encode 编码的内容
+                --util
+                    --Calculate 用于JUnit测试的类
+                    
+    --test
+        --java
+            --com.liumapp.jspbasic
+                --util
+                    --CalculateTest 对calculate这个类的测试
+                 
 
 # 代码解析
 
