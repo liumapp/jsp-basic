@@ -28,6 +28,9 @@ you'll see the result from your browser with thr url of http://localhost:8080/js
             --com.liumapp.jspbasic
                 --util
                     --CalculateTest 对calculate这个类的测试
+                --JunitFlowTest  对JUnit运行流程的测试
+                --TestAll test suit的批量测试
+                --ParameterTest 参数化测试
                  
                     
 
@@ -35,4 +38,5 @@ you'll see the result from your browser with thr url of http://localhost:8080/js
 
 * 监听器篇章：http://www.liumapp.com/articles/2017/06/01/1496304763265.html
 * 过滤器篇章: http://www.liumapp.com/articles/2017/06/06/1496738689705.html
+* JUnit篇章：
 
