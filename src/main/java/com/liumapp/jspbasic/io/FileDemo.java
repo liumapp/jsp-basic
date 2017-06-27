@@ -32,7 +32,6 @@ public class FileDemo {
             file2.createNewFile();
         }
 
-
     }
 
 }
