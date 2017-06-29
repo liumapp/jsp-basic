@@ -58,8 +58,14 @@ public class RafDemo {
         /**
          * 这样的输出方式将会导致乱码
          */
-//        String s1 = new String(buf , "utf-16");
-//        System.out.println(s1);
+        String s1 = new String(buf , "utf-8");
+        System.out.println(s1);
+
+        for (byte b : buf) {
+            System.out.print(Integer.toHexString( b & 0xff) + " ");
+        }
+
+        raf.close();
     }
 
 }
