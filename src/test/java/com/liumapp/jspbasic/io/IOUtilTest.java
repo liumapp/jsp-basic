@@ -22,4 +22,14 @@ public class IOUtilTest extends TestCase {
 //        IOUtil.printHex();
     }
 
+    public void testPrintHexByByteArray () {
+        String path;
+        path = this.getClass().getResource("/").getPath() + "/../classes/" + "testData";
+        try {
+            IOUtil.printHexByByteArray(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
