@@ -32,4 +32,14 @@ public class IOUtilTest extends TestCase {
         }
     }
 
+    public void testFileOutDemo () {
+        String path;
+        path = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutData";
+        try {
+            IOUtil.FileOutDemo(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
