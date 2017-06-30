@@ -1,7 +1,9 @@
 package com.liumapp.jspbasic.io;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 /**
  * Created by liumapp on 6/30/17.
@@ -75,7 +77,37 @@ public class IOUtil {
             }
         }
 
+    }
 
+
+    public static void FileOutDemo (String fileName) throws IOException {
+
+        /**
+         * 如果一个文件不存在，则直接创建，如果存在，删除后创建
+         * 要注意这个类在构建的时候，如果添加一个true，那么结果就是在文件的后面进行追加
+         */
+        FileOutputStream out = new FileOutputStream(fileName);
+
+        /**
+         * 一次只能写一个字节
+         * 将写入A的低八位
+         */
+        out.write('A');
+
+        /**
+         * 所以要写入一个int型的数，需要写四次
+         */
+        int a = 10;
+        out.write(a >>> 24);
+        out.write(a >>> 16);
+        out.write(a >>> 8);
+        out.write(a);
+
+        byte[] utf8 = "中国" . getBytes("utf-8");
+        out.write(utf8);
+        out.close();
+
+        IOUtil.printHex(fileName);
     }
 
 }
