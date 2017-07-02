@@ -2,6 +2,7 @@ package com.liumapp.jspbasic.io;
 
 import junit.framework.TestCase;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -40,6 +41,19 @@ public class IOUtilTest extends TestCase {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void testCopyFile () {
+        String src , dest;
+        src = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutData";
+        dest = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutDataCopy";
+
+        try {
+            IOUtil.copyFile(new File(src) , new File(dest));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
