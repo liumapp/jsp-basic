@@ -21,6 +21,7 @@ you'll see the result from your browser with thr url of http://localhost:8080/js
                     --FileDemo java.io.File类的相关使用
                     --FileUtil java.io.File相关使用的一个工具类
                     --RafDemo RandomAccessFile对文件内容的读写操作
+                    --IOUtil  字节流输入输出的相关细节
                 --util
                     --Calculate 用于JUnit测试的类
                     

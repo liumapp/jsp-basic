@@ -56,4 +56,14 @@ public class IOUtilTest extends TestCase {
 
     }
 
+    public void testDosDemo () {
+        String path;
+        path = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutData";
+        try {
+            IOUtil.DosDemo(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

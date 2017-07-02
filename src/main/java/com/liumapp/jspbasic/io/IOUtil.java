@@ -105,6 +105,12 @@ public class IOUtil {
         IOUtil.printHex(fileName);
     }
 
+    /**
+     * 将src文件的内容复制到dest文件里
+     * @param srcFile
+     * @param destFile
+     * @throws IOException
+     */
     public static void copyFile (File srcFile , File destFile) throws IOException {
 
         if (!srcFile.exists()) {
@@ -122,11 +128,26 @@ public class IOUtil {
         int b ;
         while ((b = in.read(buf , 0 , buf.length)) != -1) {
             out.write(buf , 0 , b);
-            out.flush();
+            out.flush();//flush()作用是将缓冲区内容强制写出，避免文件未写完就关闭了，所以一般在文件关闭之前加上这句
         }
 
         in.close();
         out.close();
+    }
+
+    public static void DosDemo (String fileName) throws IOException {
+
+        DataOutputStream dos = new DataOutputStream(new FileOutputStream(fileName));
+        dos.writeInt(10);
+        dos.writeInt(-10);
+        dos.writeLong(100);
+        dos.writeByte(1000);
+        dos.writeDouble(10);
+        dos.writeUTF("世界你好");//utf-8
+        dos.writeChars("世界你好");//utf-16
+        dos.close();
+        IOUtil.printHex(fileName);
+
     }
 
 }
