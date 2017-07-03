@@ -1,9 +1,6 @@
 package com.liumapp.jspbasic.socket;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -45,9 +42,23 @@ public class Server {
                 System.out.println("server获取到: " + info);
             }
             /**
-             * 关闭输入流及相关资源
+             * 关闭输入流
              */
             socket.shutdownInput();
+
+            /**
+             * 获取输出流，响应客户端的请求
+             */
+            OutputStream os = socket.getOutputStream();
+            PrintWriter pw = new PrintWriter(os);
+            pw.write("欢迎登录");
+            pw.flush();//输出
+
+            /**
+             * 关闭相关资源
+             */
+            pw.close();
+            os.close();
             bf.close();
             isr.close();
             is.close();

@@ -1,8 +1,6 @@
 package com.liumapp.jspbasic.socket;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 /**
@@ -33,8 +31,24 @@ public class Client {
             socket.shutdownOutput(); //关闭输出流
 
             /**
+             * 获取输入流
+             * 读取server的响应
+             */
+            InputStream is = socket.getInputStream();
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader bf = new BufferedReader(isr);
+            String info = null;
+            while((info = bf.readLine()) != null) {
+                System.out.println("client get server's response: " + info);
+            }
+
+
+            /**
              * 关闭相关资源
              */
+            bf.close();
+            isr.close();
+            is.close();
             pw.close();
             os.close();
             socket.close();
