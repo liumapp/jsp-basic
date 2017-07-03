@@ -1,0 +1,62 @@
+package com.liumapp.jspbasic.socket;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+/**
+ * Created by liumapp on 7/3/17.
+ * E-mail:liumapp.com@gmail.com
+ * home-page:http://www.liumapp.com
+ * 基于Tcp协议的Socket通信
+ * 实现用户登录
+ * 服务端
+ */
+public class Server {
+
+    public static void main (String[] args) {
+
+        try {
+            /**
+             * 创建一个服务器端socket
+             * ServerSocket
+             * 指定绑定的端口
+             * 并监听此端口
+             */
+            ServerSocket serverSocket = new ServerSocket(9999);
+
+            /**
+             * 调用accept()方法开始监听，等待客户端的连接
+             */
+            System.out.println("等待客户连接");
+            Socket socket = serverSocket.accept();
+
+            /**
+             * 获取输入流，并读取客户端信息
+             */
+            InputStream is = socket.getInputStream();
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader bf = new BufferedReader(isr);
+            String info = null;
+            while ((info = bf.readLine()) != null) {
+                System.out.println("server获取到: " + info);
+            }
+            /**
+             * 关闭输入流及相关资源
+             */
+            socket.shutdownInput();
+            bf.close();
+            isr.close();
+            is.close();
+            socket.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+}
