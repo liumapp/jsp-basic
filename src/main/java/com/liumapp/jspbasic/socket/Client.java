@@ -42,7 +42,6 @@ public class Client {
                 System.out.println("client get server's response: " + info);
             }
 
-
             /**
              * 关闭相关资源
              */

@@ -128,11 +128,40 @@ public class IOUtil {
         int b ;
         while ((b = in.read(buf , 0 , buf.length)) != -1) {
             out.write(buf , 0 , b);
-            out.flush();//flush()作用是将缓冲区内容强制写出，避免文件未写完就关闭了，所以一般在文件关闭之前加上这句
         }
-
+        out.flush();//flush()作用是将缓冲区内容强制写出，避免文件未写完就关闭了，所以一般在文件关闭之前加上这句
         in.close();
         out.close();
+    }
+
+    /**
+     * 利用缓冲字节流进行文件的拷贝
+     * @param srcFile
+     * @param destFile
+     * @throws IOException
+     */
+    public static void copyFileByBuffer (File srcFile , File destFile) throws IOException {
+        if (!srcFile.exists()) {
+            throw new IllegalArgumentException("文件 " + srcFile + "不存在");
+        }
+
+        if (!srcFile.isFile()) {
+            throw new IllegalArgumentException(srcFile + "不是文件");
+        }
+
+        BufferedInputStream bis = new BufferedInputStream(
+                new FileInputStream(srcFile)
+        );
+        BufferedOutputStream bos = new BufferedOutputStream(
+                new FileOutputStream(destFile)
+        );
+        int c;
+        while((c = bis.read()) != -1) {
+            bos.write(c);
+        }
+        bos.flush();//刷新缓冲区，把里面的数据写出到destFile
+        bis.close();
+        bos.close();
     }
 
     public static void DosDemo (String fileName) throws IOException {
@@ -142,12 +171,63 @@ public class IOUtil {
         dos.writeInt(-10);
         dos.writeLong(100);
         dos.writeByte(1000);
-        dos.writeDouble(10);
+        dos.writeDouble(10.5);
         dos.writeUTF("世界你好");//utf-8
         dos.writeChars("世界你好");//utf-16
         dos.close();
         IOUtil.printHex(fileName);
 
     }
+
+    public static void DisDemo (String fileName) throws IOException {
+
+        IOUtil.printHex(fileName);
+        DataInputStream dis = new DataInputStream(new FileInputStream(fileName));
+        int i = dis.readInt();
+        int i2 = dis.readInt();
+        System.out.println("read int data is : " + i + " and " + i2);
+        long l = dis.readLong();
+        System.out.println("read long data is : " + l);
+        Byte b = dis.readByte();
+        System.out.println("read byte data is : " + b);
+        Double d = dis.readDouble();
+        System.out.println("read double data is : " + d);
+        String s = dis.readUTF();
+        System.out.println("read utf8 data is : " + s);
+        dis.close();
+    }
+
+    public static void IsrAndOswDemo (String fileName , String outFileName) throws IOException {
+        FileInputStream in = new FileInputStream(fileName);
+        InputStreamReader isr = new InputStreamReader(in , "utf-8");
+
+        FileOutputStream out = new FileOutputStream(outFileName);
+        OutputStreamWriter osw = new OutputStreamWriter(out , "utf-8");
+        /*
+        int c;
+        while((c = isr.read()) != -1) {
+            System.out.println((char)c);
+        }
+        */
+        char[] buffer = new char[8 * 1024];
+        int c;
+        /**
+         * 批量读取
+         * 从第0个位置开始放入buffer
+         * 最多buffer.length个
+         * 返回的是读到的字符的个数
+         */
+        while ((c = isr.read(buffer , 0 , buffer.length)) != -1){
+            String s = new String(buffer , 0 , c );
+            System.out.println(s);
+            osw.write(buffer , 0 , c);
+        }
+        osw.flush();
+
+        osw.close();
+        isr.close();
+    }
+
+
 
 }

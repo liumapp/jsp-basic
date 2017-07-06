@@ -56,11 +56,45 @@ public class IOUtilTest extends TestCase {
 
     }
 
+    public void testCopyFileByBuffer () {
+        String src , dest;
+        src = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutData";
+        dest = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutDataCopy";
+
+        try {
+
+            IOUtil.copyFileByBuffer(new File(src) , new File(dest));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void testDosDemo () {
         String path;
         path = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutData";
         try {
             IOUtil.DosDemo(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void testDisDemo () {
+        String path;
+        path = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutData";
+        try {
+            IOUtil.DisDemo(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void testIsrAndOswDemo () {
+        String path , outPath;
+        path = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutData";
+        outPath = this.getClass().getResource("/").getPath() + "/../classes/" + "OswCopyData";
+        try {
+            IOUtil.IsrAndOswDemo(path , outPath);
         } catch (IOException e) {
             e.printStackTrace();
         }
