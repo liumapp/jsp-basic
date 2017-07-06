@@ -228,6 +228,57 @@ public class IOUtil {
         isr.close();
     }
 
+    public static void FrAndFwDemo (String fileName , String outFileName) throws IOException {
+
+        FileReader fr = new FileReader(fileName);
+        /**
+         * fileWrite第二个参数为true时，表示追加内容，而不是完全替换原有的内容
+         */
+        FileWriter fw = new FileWriter(outFileName);
+
+        char[] buffer = new char[20 * 1024];
+        int c;
+
+        while ((c = fr.read(buffer , 0 , buffer.length)) != -1) {
+            fw.write(buffer , 0 , c);
+        }
+        fw.flush();
+        fr.close();
+        fw.close();
+
+    }
+
+    public static void BrAndBwOrPwDemo (String fileName , String outFileName) throws IOException {
+
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader(
+                        new FileInputStream(fileName)
+                )
+        );
+
+        BufferedWriter bw = new BufferedWriter(
+                new OutputStreamWriter(
+                        new FileOutputStream(outFileName)
+                )
+        );
+
+        String line;
+
+        while((line = br.readLine()) != null) {
+            System.out.println(line);//一次读一行，并不能识别换行
+            bw.write(line);
+            /**
+             * 换行
+             */
+            bw.newLine();
+        }
+        bw.flush();
+
+        br.close();
+        bw.close();
+
+    }
+
 
 
 }

@@ -119,4 +119,26 @@ FileDemo直接运行即可，FileUtil需要通过JUnit下的FileUtilTest来测�
     InputStreamReader 完成byte流解析为char流，按照编码解析。
     OutputStreamWriter 提供char流到byte流，按照编码处理。
 
+* 字符流的过滤器
+
+    BufferedReader -> readLine 一次读一行
+    BufferedWriter/PrintWriter 写一行
+
+# 对象的序列化和反序列化
+
+直接运行ObjectSerializable来查看示例。
+
+* 将object对象转换成byte序列，反之则叫对象的反序列化
+
+* 序列化流（ObjectOutputStream），是过滤流－－－writeObject
+
+    反序列化流（ObjectInputStream）--- readObject
+
+* 序列化接口（Serializable）
+
+    对象必须实现序列化接口，才能进行序列化，否则将出现异常。
+    
+    这个接口，没有任何方法，只是一个标准。
+
+### 对象的序列化
 

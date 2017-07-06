@@ -100,4 +100,27 @@ public class IOUtilTest extends TestCase {
         }
     }
 
+    public void testFrAndFwDemo () {
+        String path , outPath;
+        path = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutData";
+        outPath = this.getClass().getResource("/").getPath() + "/../classes/" + "OswCopyData";
+        try {
+            IOUtil.FrAndFwDemo(path , outPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void testBrAndBwOrPwDemo () {
+        String path , outPath;
+        path = this.getClass().getResource("/").getPath() + "/../classes/" + "testPutData";
+        outPath = this.getClass().getResource("/").getPath() + "/../classes/" + "OswCopyData";
+        try {
+            IOUtil.BrAndBwOrPwDemo(path , outPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
