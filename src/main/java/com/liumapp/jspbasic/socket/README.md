@@ -18,4 +18,4 @@ InetAddress不能直接运行，请通过JUnit运行InetAddressDemoTest
 
 ### socketDemo
 
-该目录下为收录来的一个案例
+socket应用的一个简单案例

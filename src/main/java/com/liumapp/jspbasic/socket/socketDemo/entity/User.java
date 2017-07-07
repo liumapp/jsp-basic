@@ -1,11 +1,13 @@
 package com.liumapp.jspbasic.socket.socketDemo.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by liumapp on 7/6/17.
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-public class User {
+public class User implements Serializable {
 
     private String username;
 

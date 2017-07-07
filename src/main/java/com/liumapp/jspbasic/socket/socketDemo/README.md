@@ -1,5 +1,8 @@
 
 ### 运行步骤
 
-* 执行db.sql
+* 按照db.sql在test库里创建相关表
 
+* 启动service/Server
+
+* 运行socket/Client

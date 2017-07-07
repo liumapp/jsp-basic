@@ -25,7 +25,6 @@ public class InetAddressDemo {
         System.out.println("网络上的一台计算机名称：" + address2.getHostName());
         System.out.println("它的IP地址：" + address2.getHostAddress());
 
-
     }
 
 }
