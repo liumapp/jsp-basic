@@ -24,6 +24,9 @@ you'll see the result from your browser with thr url of http://localhost:8080/js
                     --IOUtil  字节流输入输出的相关细节
                 --util
                     --Calculate 用于JUnit测试的类
+                --socket
+                    --详情请见socket目录下的README
+               
                     
     --test
         --java

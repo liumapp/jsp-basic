@@ -14,6 +14,7 @@ public class Client {
     public static void main (String[] args) {
 
         try {
+
             /**
              *  创建客户端socket
              *  指定服务器地址和端口
@@ -55,6 +56,7 @@ public class Client {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
 }
