@@ -26,6 +26,8 @@ you'll see the result from your browser with thr url of http://localhost:8080/js
                     --Calculate 用于JUnit测试的类
                 --socket
                     --详情请见socket目录下的README
+                --thread
+                    --线程章节，详情见thread下的README
                
                     
     --test
