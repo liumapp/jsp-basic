@@ -12,10 +12,13 @@ you'll see the result from your browser with thr url of http://localhost:8080/js
     --com
         --liumapp
             --jspbasic
+                --collection
+                    --集合，详情见collection下的README
                 --entity 实体类
                 --filter 过滤器
                     --LoginFilter 控制登录和编码转换的过滤器，同时涉及到LoginServlet
                 --listener 监听器
+                --reflect 反射
                 --io
                     --Encode 编码的内容
                     --FileDemo java.io.File类的相关使用
@@ -28,6 +31,7 @@ you'll see the result from your browser with thr url of http://localhost:8080/js
                     --详情请见socket目录下的README
                 --thread
                     --线程章节，详情见thread下的README
+                
                
                     
     --test
